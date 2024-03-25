@@ -1,0 +1,25 @@
+{
+  "name": "x-version",
+  "version": "1.0.0",
+  "description": "Set android and ios versions in ionic app",
+  "main": "version-setter-x.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talhahasanzia/x-version.git"
+  },
+  "keywords": [
+    "ionic",
+    "versioning",
+    "android",
+    "ios"
+  ],
+  "author": "talhahasanzia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talhahasanzia/x-version/issues"
+  },
+  "homepage": "https://github.com/talhahasanzia/x-version#readme"
+}
