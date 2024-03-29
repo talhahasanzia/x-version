@@ -57,4 +57,4 @@ cross-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visibl
 All arguments are optional.
 
 ## Convenient
-Currently, the package targets ionic-capacitor, so you don't need to worry about where iOS and Android build files are. 
+Currently, the package targets ionic-capacitor, so you don't need to worry about where iOS and Android build files are. Just make sure you already have android and ios folders created in your directory where you run the command. 
