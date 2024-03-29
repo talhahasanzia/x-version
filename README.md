@@ -1,4 +1,4 @@
-# x-version
+# cross-version
 Cross version setter for platforms like ionic-capacitor.
 
 ## Description
@@ -8,15 +8,15 @@ it is Android or iOS. Many web developers who come from web background often fin
 ## Installation
 Prefer global installation if you want to run commands directly. 
 ```
-npm install -g x-version
+npm install -g cross-version
 ```
 or locally install:
 ```
-npm install x-version
+npm install cross-version
 ```
 In order to run with local installation use `npx`.
 ```
-npx x-version --versionCode 234
+npx cross-version --versionCode 234
 ```
 
 
@@ -25,7 +25,7 @@ Make sure you run command in ionic root project.
 
 Full command (global install):
 ```
-x-version --versionCode 234 --versionName 2.3.4 --bundleVersion 2244 --shortVersion 22.64.5
+cross-version --versionCode 234 --versionName 2.3.4 --bundleVersion 2244 --shortVersion 22.64.5
 ```
 
 Where:
@@ -43,15 +43,15 @@ You can run any argument in any combination, in any sequence, arguments which ar
 For e.g.
 
 ```
-x-version --versionCode 234 --versionName 2.3.4 // only sets android versions
+cross-version --versionCode 234 --versionName 2.3.4 // only sets android versions
 ```
 and 
 ```
-x-version --bundleVersion 2244 --shortVersion 22.64.5 // only sets iOS versions
+cross-version --bundleVersion 2244 --shortVersion 22.64.5 // only sets iOS versions
 ```
 or even:
 ```
-x-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visible versions for Android and iOS
+cross-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visible versions for Android and iOS
 ```
 
 All arguments are optional.
