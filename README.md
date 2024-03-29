@@ -12,10 +12,30 @@ x-version --versionCode 234 --versionName 2.3.4 --bundleVersion 2244 --shortVers
 ```
 
 Where:
+
 `versionCode`: is for Android's version code, this is integer type (kind of build number).
+
 `versionName`: is for Android's version name, visible to users, this is string type.
+
 `shortVersion`: is for iOS's version, this is the version that user sees, its a string value.
+
 `bundleVersion`: is for iOS's build number, it is string.
+
+You can run any argument in any combination, in any sequence, arguments which are provided are used others are ignored.
+
+For e.g.
+
+```
+x-version --versionCode 234 --versionName 2.3.4 // only sets android versions
+```
+and 
+```
+x-version --bundleVersion 2244 --shortVersion 22.64.5 // only sets iOS versions
+```
+or even:
+```
+x-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visible versions for Android and iOS
+```
 
 All arguments are optional.
 
