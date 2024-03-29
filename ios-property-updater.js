@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function updateIosBuildFileProperty(shortVersion, bundleVersion) {
-    const filePath = path.join(__dirname, 'ios', 'App', 'App', 'Info.plist');
+    const filePath = path.join(process.cwd(), 'ios', 'App', 'App', 'Info.plist');
 
      // Read the file line by line
      fs.readFile(filePath, 'utf8', (err, data) => {

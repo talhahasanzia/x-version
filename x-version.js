@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const parseArguments = require('./argument-parser');
 const updateAndroidBuildFileProperty = require('./android-property-updater');
 const updateIosBuildFileProperty = require('./ios-property-updater');
@@ -17,4 +19,6 @@ if (versionCode)
 
 const bundleVersion = argsData.bundleVersion;
 const shortVersion = argsData.shortVersion;
-updateIosBuildFileProperty(shortVersion, bundleVersion)
+
+if (shortVersion || bundleVersion)
+    updateIosBuildFileProperty(shortVersion, bundleVersion)

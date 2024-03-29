@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Set android and ios versions in cross platforms like ionic-capacitor",
   "main": "x-version.js",
+  "bin": {
+    "x-version": "./x-version.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/talhahasanzia/x-version.git"

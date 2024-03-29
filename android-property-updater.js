@@ -3,7 +3,7 @@ const path = require('path');
 
 function updateAndroidBuildFileProperty(property, value) {
 
-    const filePath = path.join(__dirname, 'android', 'app', 'build.gradle');
+    const filePath = path.join(process.cwd(), 'android', 'app', 'build.gradle');
 
 
     // Read the file line by line
