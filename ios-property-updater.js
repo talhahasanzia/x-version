@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const xml2js = require('xml2js');
 
 function updateIosBuildFileProperty(shortVersion, bundleVersion) {
     const filePath = path.join(__dirname, 'ios', 'App', 'App', 'Info.plist');

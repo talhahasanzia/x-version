@@ -21,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/talhahasanzia/x-version/issues"
   },
-  "homepage": "https://github.com/talhahasanzia/x-version#readme",
-  "dependencies": {
-    "xml2js": "0.6.2"
-  }
+  "homepage": "https://github.com/talhahasanzia/x-version#readme"
 }
