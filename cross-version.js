@@ -4,7 +4,6 @@ const parseArguments = require('./argument-parser');
 const updateAndroidBuildFileProperty = require('./android-property-updater');
 const updateIosBuildFileProperty = require('./ios-property-updater');
 
-
 const argsData = parseArguments()
 
 console.log("Received arguments", argsData)

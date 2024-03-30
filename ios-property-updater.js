@@ -1,8 +1,15 @@
 const fs = require('fs');
 const path = require('path');
+const findInfoPlist =require('./plist-search')
+
 
 function updateIosBuildFileProperty(shortVersion, bundleVersion) {
-    const filePath = path.join(process.cwd(), 'ios', 'App', 'App', 'Info.plist');
+    var filePath = path.join(process.cwd(), 'ios', 'App', 'App', 'Info.plist');
+
+    if(!fs.existsSync(filePath)){
+        filePath = findInfoPlist(path.join(process.cwd(), 'ios'))
+    }
+    
 
      // Read the file line by line
      fs.readFile(filePath, 'utf8', (err, data) => {
