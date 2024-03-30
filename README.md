@@ -84,7 +84,7 @@ Then run (in case of global install):
 ```
 cross-version --auto  // picks version data from package.json
 ```
-or (in case of local isntall):
+or (in case of local install):
 ```
 npx cross-version --auto  // picks version data from package.json
 ```
