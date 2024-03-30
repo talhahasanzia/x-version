@@ -3,21 +3,33 @@
 const parseArguments = require('./argument-parser');
 const updateAndroidBuildFileProperty = require('./android-property-updater');
 const updateIosBuildFileProperty = require('./ios-property-updater');
+const parseJson = require('./parse-json')
+const path = require('path');
 
 const argsData = parseArguments()
 
-console.log("Received arguments", argsData)
+var versionCode =  argsData.versionCode;
+var versionName =  argsData.versionName;
 
-const versionCode = argsData.versionCode;
-const versionName = argsData.versionName;
+var bundleVersion = argsData.bundleVersion;
+var shortVersion = argsData.shortVersion;
 
-if (versionName)
-    updateAndroidBuildFileProperty('versionName', versionName);
-if (versionCode)
-    updateAndroidBuildFileProperty('versionCode', versionCode);
+if (argsData.auto != null) {
+    const packageJsonPath = path.join(process.cwd(), 'package.json');
+    const obj = parseJson(packageJsonPath);
+    try{
+        versionCode = obj.android.versionCode || versionCode;
+        versionName = obj.android.versionName || versionName;
+        bundleVersion = obj.ios.bundleVersion || bundleVersion;
+        shortVersion = obj.ios.shortVersion || shortVersion;
+    } catch (error) {
+        console.error('Error reading or parsing package.json.\nIf you are using --auto make sure you set ios and android configs as mentioned in https://www.npmjs.com/package/cross-version\n', error);
+    }
+    
+}
 
-const bundleVersion = argsData.bundleVersion;
-const shortVersion = argsData.shortVersion;
+if (versionName || versionCode)
+    updateAndroidBuildFileProperty(versionCode, versionName);
 
 if (shortVersion || bundleVersion)
     updateIosBuildFileProperty(shortVersion, bundleVersion)

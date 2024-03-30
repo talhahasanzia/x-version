@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function updateAndroidBuildFileProperty(property, value) {
+function updateAndroidBuildFileProperty(versionCode, versionName) {
 
     const filePath = path.join(process.cwd(), 'android', 'app', 'build.gradle');
 
@@ -13,28 +13,24 @@ function updateAndroidBuildFileProperty(property, value) {
             return;
         }
 
-        // Split the file content into lines
-        const lines = data.split('\n');
+        var updatedFileContent = data;
 
-        // Iterate through each line to find and replace the versionName
-        const updatedContent = lines.map(line => {
-            if (line.includes('property')) {
-                // Replace the version number with the new version
-                return line.replace(new RegExp(`${property}\\s+"[^"]+"`), `${property} "${value}"`);
-            }
-            return line;
-        });
+        if(versionCode){
+           updatedFileContent = updatedFileContent.replace(/versionCode\s+\d+/, `versionCode ${versionCode}`);
+        }
 
-        // Join the lines back into a single string
-        const updatedFileContent = updatedContent.join('\n');
+        if(versionName){
+            updatedFileContent = updatedFileContent.replace(/versionName\s+"[^"]*"/, `versionName "${versionName}"`);
+        }
 
+      
         // Write the updated content back to the file
         fs.writeFile(filePath, updatedFileContent, 'utf8', (err) => {
             if (err) {
                 console.error('Error writing to file:', err);
                 return;
             }
-            console.log(`File ${filePath} updated successfully -  ${property} = ${value}`);
+            console.log(`File ${filePath} updated successfully -versionCode=${versionCode}, versionName=${versionName}`);
         });
     });
 

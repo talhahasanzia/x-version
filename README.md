@@ -54,7 +54,41 @@ or even:
 cross-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visible versions for Android and iOS
 ```
 
-All arguments are optional.
+All arguments are optional, but case sensitive.
+
+### New in v2.0.0
+- Fixed: Bug in Android version setting
+- Added: Support for react-native projects. (No difference in usage, same as above)
+- Added: Support for reading versions from `package.json`
+
+Start by adding version information in `package.json` in following format
+```
+{
+
+...
+
+  "android": {
+    "vesionCode": 2233,
+    "versionName": "2.2.44"
+  },
+  "ios": {
+    "bundleVersion": 2233,
+    "shortVersion": "2.2.44"
+  }
+
+...
+}
+```
+
+Then run (in case of global install):
+```
+cross-version --auto  // picks version data from package.json
+```
+or (in case of local isntall):
+```
+npx cross-version --auto  // picks version data from package.json
+```
+
 
 ## Convenient
 Currently, the package targets ionic-capacitor, so you don't need to worry about where iOS and Android build files are. Just make sure you already have android and ios folders created in your directory where you run the command. 
