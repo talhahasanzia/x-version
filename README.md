@@ -77,7 +77,31 @@ This would give error previously because of missing Android config but now it is
 
 - iOS versioning is moved to project config (`.pbxproj`) file to avoid editing `Info.plist` directly. This is same file which gets updated when we change version from Xcode GUI.
 
+#### Auto version bump
+Now you can bump versions automatically:
+```
+cross-version --bumpMajorVersion  // bumps both ios and android's major versions
+// OR
+cross-version --bumpAndroidMinorVersion  // bumps only android minor version
+```
 
+Details:
+| Flag | Description |
+| --- | --- |
+| bumpMajorVersion | Bumps major versions in both **ios** and **android** |
+| bumpMinorVersion | Bumps minor versions in both **ios** and **android** |
+| bumpPatchVersion | Bumps patch versions in both **ios** and **android** |
+| bumpAndroidMajorVersion | Bumps major version in  **android** only |
+| bumpAndroidMinorVersion | Bumps minor version in  **android** only |
+| bumpAndroidPatchVersion | Bumps patch version in  **android** only |
+| bumpIosMajorVersion | Bumps major version in  **ios** only |
+| bumpIosMinorVersion | Bumps minor version in  **ios** only |
+| bumpIosPatchVersion | Bumps patch version in  **ios** only |
+
+
+Along with that, this will also update bundle version (or current project version) in iOS and versionCode in android based on semVersion.
+
+*Caveats*: Minor and Patch version should not exceed more than 2 digits.
 
 
 ### New in v2.0.0
