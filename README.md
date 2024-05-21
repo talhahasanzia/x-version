@@ -14,10 +14,11 @@ or locally install:
 ```
 npm install cross-version
 ```
-In order to run with local installation use `npx`.
+Or use `npx`.
 ```
 npx cross-version --versionCode 234
 ```
+
 
 
 ## Usage
@@ -55,6 +56,30 @@ cross-version --shortVersion 22.64.5 --versionName 2.3.4 // only set user visibl
 ```
 
 All arguments are optional, but case sensitive.
+
+### New in v3.0.0
+- Optional iOS and Android config in package.json, now you can set any one of them and it will work. Refer to [package.json](https://github.com/talhahasanzia/x-version?tab=readme-ov-file#new-in-v200)
+```
+{
+
+...
+
+  "ios": {
+    "bundleVersion": 2233,
+    "shortVersion": "2.2.44"
+  }
+
+...
+}
+```
+
+This would give error previously because of missing Android config but now it is supported.
+
+- iOS versioning is moved to project config (`.pbxproj`) file to avoid editing `Info.plist` directly. This is same file which gets updated when we change version from Xcode GUI.
+- Added support for reading version from project's version i.e. `version` field in `package.json`.
+
+
+
 
 ### New in v2.0.0
 - Fixed: Bug in Android version setting

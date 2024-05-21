@@ -26,12 +26,8 @@
     "url": "https://github.com/talhahasanzia/x-version/issues"
   },
   "homepage": "https://github.com/talhahasanzia/x-version#readme",
-  "android": {
-    "vesionCode": 2233,
-    "versionName": "2.2.44"
-  },
   "ios": {
-    "bundleVersion": 2233,
-    "shortVersion": "2.2.44"
+    "bundleVersion": 4444,
+    "shortVersion": "4.44"
   }
 }

@@ -18,10 +18,10 @@ if (argsData.auto != null) {
     const packageJsonPath = path.join(process.cwd(), 'package.json');
     const obj = parseJson(packageJsonPath);
     try{
-        versionCode = obj.android.versionCode || versionCode;
-        versionName = obj.android.versionName || versionName;
-        bundleVersion = obj.ios.bundleVersion || bundleVersion;
-        shortVersion = obj.ios.shortVersion || shortVersion;
+        versionCode = obj.android ? obj.android.versionCode : versionCode;
+        versionName = obj.android ? obj.android.versionName : versionName;
+        bundleVersion = obj.ios ? obj.ios.bundleVersion : bundleVersion;
+        shortVersion = obj.ios ? obj.ios.shortVersion : shortVersion;
     } catch (error) {
         console.error('Error reading or parsing package.json.\nIf you are using --auto make sure you set ios and android configs as mentioned in https://www.npmjs.com/package/cross-version\n', error);
     }
