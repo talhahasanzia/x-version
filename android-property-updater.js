@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+const findModuleBuildGradle= require('./build-gradle-search');
 
 function updateAndroidBuildFileProperty(versionCode, versionName) {
 
-    const filePath = path.join(process.cwd(), 'android', 'app', 'build.gradle');
+    const filePath = findModuleBuildGradle(path.join(process.cwd(), 'android'));
 
 
     // Read the file line by line

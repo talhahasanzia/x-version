@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const findPbxFile = require('./pbx-search')
+const findPbxFile = require('./pbx-search');
 
 var marketingRegex = /MARKETING_VERSION = [^;]+;/g;
 var projectRegex = /CURRENT_PROJECT_VERSION = [^;]+;/g;
