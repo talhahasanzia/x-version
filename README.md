@@ -76,7 +76,6 @@ All arguments are optional, but case sensitive.
 This would give error previously because of missing Android config but now it is supported.
 
 - iOS versioning is moved to project config (`.pbxproj`) file to avoid editing `Info.plist` directly. This is same file which gets updated when we change version from Xcode GUI.
-- Added support for reading version from project's version i.e. `version` field in `package.json`.
 
 
 
